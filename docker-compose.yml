@@ -2,7 +2,6 @@ version: "3.9"
 
 services:
   ekklesia:
-    tty: true
     build: .
     image: ekklesia
     container_name: ekklesia
@@ -12,4 +11,3 @@ services:
     working_dir: /go/src/
     ports:
       - "8080:80"
-
