@@ -17,13 +17,12 @@ func GetUserDetail(w http.ResponseWriter, r *http.Request) {
 
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
-
 	if err != nil {
 		fmt.Println("Error", err)
 		return
 	}
-	user, err := userRepo.GetUserByID(id)
 
+	user, err := userRepo.GetUserByID(id)
 	if err != nil {
 		fmt.Println("Error", err)
 		return
@@ -35,5 +34,4 @@ func GetUserDetail(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	_, _ = w.Write(response)
-
 }

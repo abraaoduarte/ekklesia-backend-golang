@@ -12,7 +12,6 @@ import (
 
 func main() {
 	err := database.Init()
-
 	if err != nil {
 		log.Fatalf("Error initializing database: %v", err)
 	}
@@ -26,7 +25,6 @@ func main() {
 	log.Printf("Server is running on %s...\n", address)
 
 	err = http.ListenAndServe(address, router)
-
 	if err != nil {
 		log.Fatalf("Error starting the server: %v", err)
 	}

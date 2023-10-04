@@ -15,7 +15,6 @@ func InitializePostgres() (*sql.DB, error) {
 	psqlInfo := fmt.Sprintf("user=%s password=%s dbname=%s sslmode=disable host=%s port=%v", os.Getenv("POSTGRES_USER"), os.Getenv("POSTGRES_PASSWORD"), os.Getenv("POSTGRES_DB"), os.Getenv("POSTGRES_HOST"), os.Getenv("POSTGRES_PORT"))
 
 	db, err := sql.Open("postgres", psqlInfo)
-
 	if err != nil {
 		log.Fatal("Error opening database connection:", err)
 		db.Close()

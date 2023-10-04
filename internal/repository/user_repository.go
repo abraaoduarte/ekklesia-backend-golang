@@ -31,5 +31,4 @@ func (userRepo *UserRepository) GetUserByID(userID int) (*models.User, error) {
 	}
 
 	return &user, nil
-
 }
