@@ -5,13 +5,13 @@ import (
 	"fmt"
 )
 var (
-	db *sql.DB
+	DB *sql.DB
 )
 
 func Init() error {
 	var err error
 
-	db, err = InitializePostgres()
+	DB, err = InitializePostgres()
 
 	if err != nil {
 		return fmt.Errorf("error initializing sqlite: %v", err)
@@ -21,6 +21,6 @@ func Init() error {
 }
 
 func GetPostgres() *sql.DB {
-	return db
+	return DB
 }
 

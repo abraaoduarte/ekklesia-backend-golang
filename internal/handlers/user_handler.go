@@ -1,7 +1,6 @@
 package handlers
 
 import (
-	"database/sql"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -14,15 +13,8 @@ import (
 )
 
 
-var (
-	db *sql.DB
-)
-
-
 func GetUserDetail(w http.ResponseWriter, r *http.Request) {
-	db = database.GetPostgres()
-
-	userRepo := repository.NewUserRepository(db)
+	userRepo := repository.NewUserRepository(database.DB)
 
 	vars := mux.Vars(r)
 	id, err := strconv.Atoi(vars["id"])
