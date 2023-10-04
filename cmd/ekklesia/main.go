@@ -21,7 +21,6 @@ func main() {
 
 	server.RegisterHandlers(router)
 
-
 	address := fmt.Sprintf(":%v", os.Getenv("PORT"))
 
 	log.Printf("Server is running on %s...\n", address)

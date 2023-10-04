@@ -12,7 +12,6 @@ import (
 	"github.com/gorilla/mux"
 )
 
-
 func GetUserDetail(w http.ResponseWriter, r *http.Request) {
 	userRepo := repository.NewUserRepository(database.DB)
 

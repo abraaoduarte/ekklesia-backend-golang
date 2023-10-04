@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"fmt"
 )
+
 var (
 	DB *sql.DB
 )
@@ -23,4 +24,3 @@ func Init() error {
 func GetPostgres() *sql.DB {
 	return DB
 }
-
